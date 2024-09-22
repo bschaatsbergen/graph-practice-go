@@ -7,7 +7,7 @@ import (
 // Graph represents a graph with nodes and edges
 type Graph struct {
 	Nodes []*Node
-	Edges map[*Node][]*Edge
+	EdgesMap map[*Node][]*Edge
 }
 
 // Node represents a node in the graph with a value
@@ -29,11 +29,11 @@ func (g *Graph) AddNode(n *Node) {
 
 // AddEdge adds an edge between two nodes
 func (g *Graph) AddEdge(start, end *Node, weight int) {
-	if g.Edges == nil {
-		g.Edges = make(map[*Node][]*Edge)
+	if g.EdgesMap == nil {
+		g.EdgesMap = make(map[*Node][]*Edge)
 	}
 	edge := &Edge{Start: start, End: end, Weight: weight}
-	g.Edges[start] = append(g.Edges[start], edge)
+	g.EdgesMap[start] = append(g.EdgesMap[start], edge)
 }
 
 func main() {
@@ -71,7 +71,7 @@ func (g *Graph) DFS(node *Node, visited map[*Node]bool) {
 	fmt.Println("Visiting node", node.Value)
 
 	// Explore adjacent edges
-	for _, edge := range g.Edges[node] {
+	for _, edge := range g.EdgesMap[node] {
 		if !visited[edge.End] {
 			fmt.Println("Traversing edge", edge.Start.Value, "->", edge.End.Value)
 			g.DFS(edge.End, visited)
