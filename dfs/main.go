@@ -54,8 +54,8 @@ func main() {
 	graph.AddEdge(nodes[2], nodes[3], 1) // 15 -> 2
 	graph.AddEdge(nodes[2], nodes[4], 1) // 15 -> 10
 	graph.AddEdge(nodes[3], nodes[2], 1) // 2 -> 15
-
-	// Perform DFS starting from node 3
+	
+    // Perform DFS starting from node 3
 	visited := make(map[*Node]bool)
 	graph.DFS(nodes[0], visited)
 }
@@ -79,4 +79,3 @@ func (g *Graph) DFS(node *Node, visited map[*Node]bool) {
 		}
 	}
 }
-
