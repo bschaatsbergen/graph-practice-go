@@ -66,7 +66,7 @@ func (g *Graph) DFS(node *Node, visited map[*Node]bool) {
 		return
 	}
 
-	// Mark node as visited and print its value
+	// Mark node as visited
 	visited[node] = true
 	fmt.Println("Visiting node", node.Value)
 
@@ -79,3 +79,4 @@ func (g *Graph) DFS(node *Node, visited map[*Node]bool) {
 		}
 	}
 }
+
