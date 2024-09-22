@@ -14,7 +14,6 @@ func TestNodeAddition(t *testing.T) {
 		t.Errorf("Expected 1 node, got %d", len(graph.Nodes))
 	}
 
-	// Compare node references directly
 	if graph.Nodes[0] != node4 {
 		t.Errorf("Expected node %v, got %v", node4, graph.Nodes[0])
 	}
