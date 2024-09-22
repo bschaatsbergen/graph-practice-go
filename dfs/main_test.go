@@ -29,23 +29,23 @@ func TestEdgeAddition(t *testing.T) {
 
 	graph.AddEdge(node1, node2, 0)
 
-	if len(graph.Edges) != 1 {
-		t.Errorf("Expected 1 edge, got %d", len(graph.Edges))
+	if len(graph.EdgesMap) != 1 {
+		t.Errorf("Expected 1 edge, got %d", len(graph.EdgesMap))
 	}
 
-	if len(graph.Edges[node1]) != 1 {
-		t.Errorf("Expected 1 edge for node1, got %d", len(graph.Edges[node1]))
+	if len(graph.EdgesMap[node1]) != 1 {
+		t.Errorf("Expected 1 edge for node1, got %d", len(graph.EdgesMap[node1]))
 	}
 
-	if graph.Edges[node1][0].Start != node1 {
-		t.Errorf("Expected edge start to be node1, got %v", graph.Edges[node1][0].Start)
+	if graph.EdgesMap[node1][0].Start != node1 {
+		t.Errorf("Expected edge start to be node1, got %v", graph.EdgesMap[node1][0].Start)
 	}
 
-	if graph.Edges[node1][0].End != node2 {
-		t.Errorf("Expected edge end to be node2, got %v", graph.Edges[node1][0].End)
+	if graph.EdgesMap[node1][0].End != node2 {
+		t.Errorf("Expected edge end to be node2, got %v", graph.EdgesMap[node1][0].End)
 	}
 
-	if graph.Edges[node1][0].Weight != 0 {
-		t.Errorf("Expected edge weight to be 0, got %d", graph.Edges[node1][0].Weight)
+	if graph.EdgesMap[node1][0].Weight != 0 {
+		t.Errorf("Expected edge weight to be 0, got %d", graph.EdgesMap[node1][0].Weight)
 	}
 }
